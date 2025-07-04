@@ -25,7 +25,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Frontend
+          Full Stack
         </span>
       </span>
       <br />
@@ -73,16 +73,37 @@ const SocialLink = memo(({ icon: Icon, link }) => (
   </a>
 ));
 
+const LeetCodeIcon = ({ className = "", ...props }) => (
+  <img
+    src="/leetcode.svg"
+    alt="LeetCode"
+    className={className}
+    style={{ width: 24, height: 24 }}
+    {...props}
+  />
+);
+
+const CodeforcesIcon = ({ className = "", ...props }) => (
+  <img
+    src="/codeforces.svg"
+    alt="Codeforces"
+    className={className}
+    style={{ width: 24, height: 24 }}
+    {...props}
+  />
+);
+
 // Constants
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const WORDS = ["React Native Developer", "Full-Stack Web Developer"];
+const TECH_STACK = ["Javascript","React","React Native","Java","Spring Boot"];
 const SOCIAL_LINKS = [
-  { icon: Github, link: "https://github.com/EkiZR" },
-  { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/" },
-  { icon: Instagram, link: "https://www.instagram.com/ekizr._/?hl=id" }
+  { icon: Github, link: "https://github.com/Rajat26dhoot" },
+  { icon: Linkedin, link: "https://www.linkedin.com/in/rajat-dhoot26" },
+  { icon: LeetCodeIcon, link: "https://leetcode.com/u/Rajat2626/" },
+  { icon: CodeforcesIcon, link: "https://codeforces.com/profile/Rajatmah26" },
 ];
 
 const Home = () => {
@@ -183,7 +204,7 @@ const Home = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  Creating an Innovative, Functional, and User-Friendly Website for Digital Solutions
                 </p>
 
                 {/* Tech Stack */}
