@@ -114,11 +114,11 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 
 const AboutPage = () => {
   // Memoized calculations
-  const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
+  const { totalProjects, totalCertificates} = useMemo(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2022-11-06");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
@@ -172,15 +172,8 @@ const AboutPage = () => {
       description: "Professional skills validated",
       animation: "fade-up",
     },
-    {
-      icon: Globe,
-      color: "from-[#6366f1] to-[#a855f7]",
-      value: YearExperience,
-      label: "Years of Experience",
-      description: "Continuous learning journey",
-      animation: "fade-left",
-    },
-  ], [totalProjects, totalCertificates, YearExperience]);
+
+  ], [totalProjects, totalCertificates]);
 
   return (
     <div
@@ -265,7 +258,7 @@ const AboutPage = () => {
         </div>
 
         <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 cursor-pointer">
             {statsData.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
